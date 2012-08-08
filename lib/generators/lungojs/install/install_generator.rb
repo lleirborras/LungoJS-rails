@@ -45,7 +45,7 @@ else
 
         def copy_app
           say_status("copying", "app (#{Lungojs::Rails::LUNGO_JS_VERSION})", :green)
-          directory 'app', 'public/javascripts/app'
+          directory 'app', 'app/assets/javascripts/app'
         end
       end
     end
