@@ -10,20 +10,20 @@ if ::Rails.version < "3.1" || !::Rails.application.config.assets.enabled
     module Generators
       class InstallGenerator < ::Rails::Generators::Base
         desc "This generator installs Lungo.js #{Lungojs::Rails::LUNGO_JS_VERSION}"
-        source_root File.expand_path('../../../../../vendor/assets', __FILE__)
+        source_root File.expand_path('.', __FILE__)
 
         def copy_lungojs
 
           say_status("copying", "Lungo.js (#{Lungojs::Rails::LUNGO_JS_VERSION})", :green)
-          copy_file "javascripts/lungo-1.2.js", "public/javascripts/lungo-1.2.js"
-          copy_file "stylesheets/lungo-1.2.css", "public/stylesheets/lungo-1.2.js"
-          copy_file "stylesheets/lungo.theme.default.css", "public/stylesheets/lungo.theme.default.js"
-          copy_file "stylesheets/lungo.theme.default.font.css", "public/stylesheets/lungo.theme.default.font.js"
+          copy_file "../../../../../vendor/assets/javascripts/lungo-1.2.js", "public/javascripts/lungo-1.2.js"
+          copy_file "../../../../../vendor/assets/stylesheets/lungo-1.2.css", "public/stylesheets/lungo-1.2.js"
+          copy_file "../../../../../vendor/assets/stylesheets/lungo.theme.default.css", "public/stylesheets/lungo.theme.default.js"
+          copy_file "../../../../../vendor/assets/stylesheets/lungo.theme.default.font.css", "public/stylesheets/lungo.theme.default.font.js"
         end
 
         def copy_app
           say_status("copying", "app (#{Lungojs::Rails::LUNGO_JS_VERSION})", :green)
-          directory './app', 'public/javascripts/app'
+          directory 'app', 'public/javascripts/app'
         end
       end
     end
