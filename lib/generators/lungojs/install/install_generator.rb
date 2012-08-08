@@ -10,15 +10,14 @@ if ::Rails.version < "3.1" || !::Rails.application.config.assets.enabled
     module Generators
       class InstallGenerator < ::Rails::Generators::Base
         desc "This generator installs Lungo.js #{Lungojs::Rails::LUNGO_JS_VERSION}"
-        source_root File.expand_path('.', __FILE__)
+        source_root File.expand_path('..', __FILE__)
 
         def copy_lungojs
-
           say_status("copying", "Lungo.js (#{Lungojs::Rails::LUNGO_JS_VERSION})", :green)
-          copy_file "../../../../../vendor/assets/javascripts/lungo-1.2.js", "public/javascripts/lungo-1.2.js"
-          copy_file "../../../../../vendor/assets/stylesheets/lungo-1.2.css", "public/stylesheets/lungo-1.2.js"
-          copy_file "../../../../../vendor/assets/stylesheets/lungo.theme.default.css", "public/stylesheets/lungo.theme.default.js"
-          copy_file "../../../../../vendor/assets/stylesheets/lungo.theme.default.font.css", "public/stylesheets/lungo.theme.default.font.js"
+          copy_file "../../../../vendor/assets/javascripts/lungo-1.2.js", "public/javascripts/lungo-1.2.js"
+          copy_file "../../../../vendor/assets/stylesheets/lungo-1.2.css", "public/stylesheets/lungo-1.2.js"
+          copy_file "../../../../vendor/assets/stylesheets/lungo.theme.default.css", "public/stylesheets/lungo.theme.default.js"
+          copy_file "../../../../vendor/assets/stylesheets/lungo.theme.default.font.css", "public/stylesheets/lungo.theme.default.font.js"
         end
 
         def copy_app
@@ -33,7 +32,7 @@ else
     module Generators
       class InstallGenerator < ::Rails::Generators::Base
         desc "Just show instructions so people will know what to do when mistakenly using generator for Rails 3.1 apps"
-        source_root File.expand_path('./', __FILE__)
+        source_root File.expand_path('..', __FILE__)
 
         def do_nothing
           say_status("deprecated", "You are using Rails 3.1 with the asset pipeline enabled, so this generator is not needed.")
