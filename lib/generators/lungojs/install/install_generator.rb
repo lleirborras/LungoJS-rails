@@ -6,11 +6,11 @@ if ::Rails.version < "3.1" || !::Rails.application.config.assets.enabled
   module Lungojs
     module Generators
       class InstallGenerator < ::Rails::Generators::Base
-
         desc "This generator installs Lungo.js #{Lungojs::Rails::LUNGO_JS_VERSION}"
-        source_root File.expand_path('../../../../../vendor/assets', __FILE__)
 
         def copy_lungojs
+          source_root File.expand_path('../../../../../vendor/assets', __FILE__)
+
           say_status("copying", "Lungo.js (#{Lungojs::Rails::LUNGO_JS_VERSION})", :green)
           copy_file "javascripts/lungo-1.2.js", "public/javascripts/lungo-1.2.js"
           copy_file "stylesheets/lungo-1.2.css", "public/stylesheets/lungo-1.2.js"
@@ -19,6 +19,8 @@ if ::Rails.version < "3.1" || !::Rails.application.config.assets.enabled
         end
 
         def copy_app
+          source_root File.expand_path('./', __FILE__)
+
           say_status("copying", "app (#{Lungojs::Rails::LUNGO_JS_VERSION})", :green)
           directory 'app', 'public/javascripts/app'
         end
@@ -41,6 +43,8 @@ else
         end
 
         def copy_app
+          source_root File.expand_path('./', __FILE__)
+
           say_status("copying", "app (#{Lungojs::Rails::LUNGO_JS_VERSION})", :green)
           directory 'app', 'public/javascripts/app'
         end
