@@ -25,6 +25,15 @@ gem "lungojs-rails"
 And run `bundle install`. The rest of the installation depends on
 whether the asset pipeline is being used.
 
+
+### Rails 3.0
+
+To invoke the generator, run:
+
+```sh
+rails generate lungojs:install
+```
+
 ### Rails 3.1 or greater (with asset pipeline *enabled*)
 
 The Lungo.js files will be added to the asset pipeline and available for you to use. If they're not already in `app/assets/javascripts/application.js` by default, add these line:
