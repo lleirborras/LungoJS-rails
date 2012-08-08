@@ -4,7 +4,7 @@
 
 module Lungojs
   module Rails
-    VERSION = "0.0.9"
+    VERSION = "0.0.10"
     LUNGO_JS_VERSION = "1.2"
   end
 end
