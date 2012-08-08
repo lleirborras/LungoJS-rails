@@ -39,7 +39,13 @@ rails generate lungojs:install
 The Lungo.js files will be added to the asset pipeline and available for you to use. If they're not already in `app/assets/javascripts/application.js` by default, add these line:
 
 ```js
-//= require lungo.js
+//= require lungo-1.2
+```
+
+```css
+*= require lungo-1.2
+*= require lungo.theme.default
+*= require lungo.theme.default.font
 ```
 
 You're done!
