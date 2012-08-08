@@ -7,7 +7,7 @@ if ::Rails.version < "3.1" || !::Rails.application.config.assets.enabled
     module Generators
       class InstallGenerator < ::Rails::Generators::Base
 
-        desc "This generator installs Lungo.js #{Jquery::Rails::LUNGO_JS_VERSION}"
+        desc "This generator installs Lungo.js #{Lungojs::Rails::LUNGO_JS_VERSION}"
         source_root File.expand_path('../../../../../vendor/assets', __FILE__)
 
         def copy_lungojs
