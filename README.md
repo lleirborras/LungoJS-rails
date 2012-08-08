@@ -42,6 +42,8 @@ The Lungo.js files will be added to the asset pipeline and available for you to 
 //= require lungo-1.2
 ```
 
+If they're not already in `app/assets/javascripts/application.css` by default, add these line:
+
 ```css
 *= require lungo-1.2
 *= require lungo.theme.default
