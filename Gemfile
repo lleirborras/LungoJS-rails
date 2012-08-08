@@ -1,4 +1,13 @@
-source 'https://rubygems.org'
+source :rubygems
 
-# Specify your gem's dependencies in lungojs-rails.gemspec
 gemspec
+
+group :test do
+  gem 'rspec'
+  gem 'redcarpet'
+  gem 'yard'
+
+  gem 'rails'
+end
+
+

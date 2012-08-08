@@ -1,5 +1,8 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/lungojs/rails/version', __FILE__)
+# @author Lleïr Borràs Metje <lleir@llegeix.me>
+
+$:.push File.expand_path("../lib", __FILE__)
+require File.expand_path('../lib/lungojs-rails', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.name          = "lungojs-rails"
